@@ -42,3 +42,5 @@ gem 'devise'
 # 日本語化devise
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+# 管理画面
+gem 'activeadmin'
