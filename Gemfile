@@ -44,3 +44,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 # 管理画面
 gem 'activeadmin'
+#bootstrap
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
+
