@@ -1,6 +1,9 @@
-<h2>Monologにログイン</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="container mb-5">
+  <div class="user-login_container">
+    <h1 class="page-title mb-4">
+      ログイン
+    </h1>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -21,6 +24,6 @@
   <div class="actions">
     <%= f.submit "ログイン" %>
   </div>
-<% end %>
+  <% end %>
 
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>

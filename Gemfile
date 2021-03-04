@@ -24,8 +24,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
   # コーディングチェック
-  gem 'rubocop', require: false
-  gem 'rubocop-rails'
+  # gem 'rubocop', require: false
+  # gem 'rubocop-rails'
 end
 
 group :test do
