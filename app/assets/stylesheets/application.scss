@@ -1,2 +1,14 @@
 @import "bootstrap";
 
+.page-title {
+	font-size: 28px;
+	font-weight: bold;
+	margin-top: 12px;
+}
+
+@media (min-width: 576px) {
+	.user-login_container {
+		width: 65%;
+		margin: 0 auto;
+	}
+}

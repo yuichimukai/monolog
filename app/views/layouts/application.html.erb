@@ -12,54 +12,20 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <div class="text-left">
-            <%= link_to "Monolog", root_path, id: "logo", class: "navbar-brand" %>
-          </div>
-          <div class="text-right">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse float-right" id="navbarNav">
-              <ul class="navbar-nav">
-                <% if user_signed_in? %>
-                  <li class="nav-item">
-                    <%= link_to "Home", root_path, class: "nav-link" %>
-                  </li>
-                  <li class="nav-item">
-                  <div class="btn-group nav-link">
-                    <div class="dropdown-toggle cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          向井 優一
-                    </div>
-                    <div class="dropdown-menu dropdown-danger">
-                      <a class="dropdown-item" href="users/edit">プロフィールを編集</a>
-                      <div class="dropdown-divider"></div>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" rel="nofollow" data-method="delete" href="/sign_out">ログアウト</a>
-                    </div>
-                  </div>
-                  </li>
-                <% else %> 
-                  <li class="nav-item">
-                    <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
-                  </li>
-                  <li class="nav-item">
-                    <%= link_to "ログイン", sign_in_path, class: "nav-link" %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/header' %>
+
+    <div class="alert alert-success">
+      <div class="alert-wrapper">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="message"><%= alert %></div>
+        <div class="message"><%= notice %></div>
+      </div>
+    </div>
+
     <div class="container">
       <%= yield %>
     </div>
   </body>
 </html>
-
