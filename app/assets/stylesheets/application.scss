@@ -3,7 +3,11 @@
 	padding: 0;
 	margin: 0;
 }
-
+.navbar {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
 .page-title {
 	font-size: 28px;
 	font-weight: bold;
@@ -37,6 +41,12 @@
 .form-check {
 	padding-left: 0;
 	margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1030px;
+	}
 }
 
 @media (min-width: 576px) {

@@ -17,12 +17,12 @@
                   <li class="nav-item">
                   <div class="btn-group nav-link">
                     <div class="dropdown-toggle cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      マイページ
+                      <%= current_user.username %>
                     </div>
-                    <div class="dropdown-menu dropdown-danger">
-                      <a class="dropdown-item" href="/users/edit">プロフィールを編集</a>
-                      <div class="dropdown-divider"></div>
-                      <div class="dropdown-divider"></div>
+                    <div class="dropdown-menu dropdown-danger ">
+                      <a class="dropdown-item" href="/users/edit">設定</a>
+                      <div class="dropdown-divider m-0"></div>
+                      <div class="dropdown-divider m-0"></div>
                       <a class="dropdown-item" rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
                     </div>
                   </div>
