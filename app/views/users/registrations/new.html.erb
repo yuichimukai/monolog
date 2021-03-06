@@ -8,6 +8,11 @@
           <%= render "users/shared/error_messages", resource: resource %>
 
           <div class="form-group">
+            <%= f.label :ユーザー名 %><br />
+            <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"form-control" %>
+          </div>
+
+          <div class="form-group">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
           </div>
@@ -21,7 +26,7 @@
           </div>
 
           <div class="form-group">
-            <%= f.label :password_confirmation %><br />
+            <%= f.label :パスワード再確認 %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
           </div>
 
@@ -30,6 +35,5 @@
           </div>
         <% end %>
       </div>
-      <%= render "users/shared/links" %>
     </div>
 </div>
