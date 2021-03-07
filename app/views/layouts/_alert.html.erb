@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <div class="alert-wrapper">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="message"><%= notice %></div>
+    </div>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="alert alert-success">
+    <div class="alert-wrapper">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="message"><%= alert%></div>
+    </div>
+  </div>
+<% end %>
