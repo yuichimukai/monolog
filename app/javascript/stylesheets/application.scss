@@ -1,1 +1,44 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./bootstrap_custom.scss";
+
+.page-title {
+	font-size: 28px;
+	font-weight: bold;
+	margin-top: 12px;
+}
+.btn {
+	box-sizing: border-box;
+	color: #fff;
+	border-width: 2px;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 0.5rem 18px;
+	line-height: 1.75;
+	opacity: 1;
+	transition: all 150ms linear;
+}
+/* lgoin */
+.btn-service {
+	background: linear-gradient(to right, #e84338 50%, #fa8f80);
+	border: none;
+	color: #fff;
+	box-shadow: 2px 2px 4px -2px #8b8b8b;
+	margin-top: -1px;
+	margin-bottom: -1px;
+}
+
+.btn-round {
+	border-radius: 30px;
+}
+
+.form-check {
+	padding-left: 0;
+	margin-bottom: 0.5rem;
+}
+
+@media (min-width: 576px) {
+	.user-login_container {
+		width: 65%;
+		margin: 0 auto;
+	}
+}
