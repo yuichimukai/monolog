@@ -4,13 +4,19 @@ ja:
       models:
         user:
           attributes:
-            current_password:
+            username:
               blank: "が空になっています"
+            password:
+              blank: "が空になっています"
+            email:
+              blank: "が空になっています"
+              taken: "はすでに登録されています"
     attributes:
       user:
         current_password: "現在のパスワード"
         email: "メールアドレス"
         password: "パスワード"
+        username: "ユーザー名"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
     models:

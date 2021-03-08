@@ -6,8 +6,8 @@
       <div class="mb-4">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            <%= f.label :ユーザー名もしくはメールアドレス%>
+            <%= f.text_field :login, autofocus: true, autocomplete: "email", class: "form-control" %>
           </div>
 
           <div class="form-group">
@@ -27,6 +27,8 @@
           </div>
         <% end %>
       </div>
+      <p class="text-center mt-4">
       <%= render "users/shared/links" %>
+      </p>
     </div>
   </div>
