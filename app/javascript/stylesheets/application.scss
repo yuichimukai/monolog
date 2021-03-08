@@ -1,6 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./bootstrap_custom.scss";
 
+/* header */
+
+.btn-group {
+	.dropdown-menu {
+		padding: 0;
+		margin: 0;
+	}
+}
+
 .page-title {
 	font-size: 28px;
 	font-weight: bold;
@@ -36,6 +45,13 @@
 	margin-bottom: 0.5rem;
 }
 
+@media (min-width: 1200px) {
+	.navbar {
+		.container {
+			max-width: 1030px;
+		}
+	}
+}
 @media (min-width: 576px) {
 	.user-login_container {
 		width: 65%;

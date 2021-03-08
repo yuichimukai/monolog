@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
+  # ログイン済ユーザーのみにアクセスを許可する
+  #before_action :authenticate_user!
 
+  #csrf対策
+  protect_from_forgery with: :exception
+
+  # deviseコントローラーにストロングパラメータを追加する
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

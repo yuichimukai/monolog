@@ -1,5 +1,11 @@
 ja:
   activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: "が空になっています"
     attributes:
       user:
         current_password: "現在のパスワード"

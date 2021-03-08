@@ -1,7 +1,7 @@
 <div class="container mb-5">
     <div class="user-login_container mt-5">
       <h1 class="page-title mb-4">
-        設定
+        アカウント設定
       </h1>
       <div class="mb-4">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -42,7 +42,7 @@
         <% end %>
       </div>
       <div class="canncel_container mt-5">
-        <h3 class="page-title mt-3">ユーザーの削除</h3>
+        <h3 class="page-title mt-3">アカウントの削除</h3>
 
         <p>本当にアカウントを削除しますか? </p>
         <%= button_to "アカウントを削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
