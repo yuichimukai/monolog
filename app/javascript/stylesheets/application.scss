@@ -60,9 +60,9 @@
 	margin-left: -50vw;
 	margin-right: -50vw;
 	background: linear-gradient(
-		90deg,
-		rgba(202, 217, 223, 1) 0%,
-		rgba(111, 232, 224, 1) 100%
+		0deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(39, 194, 203, 1) 100%
 	);
 	.top-head__main-text {
 		color: black;
@@ -72,6 +72,9 @@
 	.top-head__sub-text {
 		font-size: 22px;
 		font-weight: 600;
+	}
+	.top-head__image {
+		width: 100%;
 	}
 }
 
