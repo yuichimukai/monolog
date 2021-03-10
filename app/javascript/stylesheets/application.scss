@@ -50,6 +50,31 @@
 	opacity: 1;
 	transition: all 150ms linear;
 }
+
+/* top-page*/
+.top-head {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	background: linear-gradient(
+		90deg,
+		rgba(202, 217, 223, 1) 0%,
+		rgba(111, 232, 224, 1) 100%
+	);
+	.top-head__main-text {
+		color: black;
+		font-size: 50px;
+		font-weight: bold;
+	}
+	.top-head__sub-text {
+		font-size: 22px;
+		font-weight: 600;
+	}
+}
+
 /* lgoin */
 .btn-service {
 	background: linear-gradient(
@@ -74,6 +99,11 @@
 }
 
 @media (min-width: 1200px) {
+	// .top-head {
+	// 	.container {
+	// 		max-width: 1030px;
+	// 	}
+	// }
 	.navbar {
 		.container {
 			max-width: 1030px;
