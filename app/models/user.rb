@@ -27,7 +27,7 @@ class User < ApplicationRecord
 				.where(
 					[
 						'username = :value OR lower(email) = lower(:value)',
-						{ value: 'メールアドレスまたはユーザ名' },
+						{ value: login },
 					],
 				)
 				.first
