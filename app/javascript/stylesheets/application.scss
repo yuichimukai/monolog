@@ -192,6 +192,58 @@
 		box-shadow: 0px 10px 15px -3px #999;
 		transform: translateY(-12px);
 	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* top-ranking-in home page */
+.col-top-gadget-index-card {
+	position: relative;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	flex: 0 0 23%;
+	max-width: 23%;
+	.top-gadget-index-card {
+		border-radius: 0;
+		padding-left: 0;
+		border: 1px solid #e2e2e2;
+		word-wrap: normal;
+		a {
+			color: #444;
+			.top-gadget-index-card__ranking--1 {
+				background: linear-gradient(to bottom, #f87c7c 90%, white);
+			}
+			.top-gadget-index-card__ranking {
+				line-height: 28px;
+				text-align: center;
+				vertical-align: middle;
+				font-size: 15px;
+				color: white;
+				font-weight: bold;
+			}
+			.top-gadget-index-card__logo-wrapper {
+				line-height: 90px;
+				.top-gadget-index-card__logo {
+					width: 40%;
+					border-radius: 0 !important;
+				}
+			}
+			.top-gadget-index-card__name {
+				width: 90%;
+				margin: 0 auto;
+				color: #675242;
+				text-align: center;
+				font-size: 15px;
+				font-weight: 500;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
 }
 
 /* lgoin */
