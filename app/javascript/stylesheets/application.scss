@@ -214,7 +214,11 @@
 		a {
 			color: #444;
 			.top-gadget-index-card__ranking--1 {
-				background: linear-gradient(to bottom, #f87c7c 90%, white);
+				background: linear-gradient(
+					0deg,
+					rgba(255, 255, 255, 1) 0%,
+					rgba(39, 203, 196, 1) 100%
+				);
 			}
 			.top-gadget-index-card__ranking {
 				line-height: 28px;
