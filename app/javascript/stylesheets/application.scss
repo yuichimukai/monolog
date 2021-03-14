@@ -60,6 +60,11 @@
 	}
 }
 
+.btn-lg {
+	font-size: 14px;
+	padding: 11px 30px;
+}
+
 /* top-page*/
 .top-head {
 	width: 100vw;
@@ -93,6 +98,16 @@
 	color: #47a1eb;
 	text-align: center;
 	font-weight: 600;
+	&::after {
+		content: "";
+		width: 65px;
+		height: 5px;
+		position: absolute;
+		background: #47a1eb;
+		top: 40px;
+		left: 50%;
+		margin-left: -30px;
+	}
 }
 
 /*search top-page*/
