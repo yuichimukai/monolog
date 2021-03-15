@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+	def show
+		@user = current_user
+	end
 	# before_action :set_user, only: %i[show edit update]
 	# def edit
 	# 	redirect_to user_path(@user) unless @user == current_user
