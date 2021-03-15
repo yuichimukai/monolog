@@ -1,8 +1,6 @@
-<h1>マイページ</h1>
-<%=link_to "プロフィール編集", "/users/mypage_edit" %>
-<h3>ユーザー名</h3>
-<%= @user.username %>
-<h3>メールアドレス</h3>
-<%= @user.email %>
-<h3>プロフィール</h3>
-<%= @user.profile%>
+<div class="container">
+      
+      <h1><%= @user.username =%></h1>
+      <%=link_to "プロフィール編集", "/users/mypage_edit" %>
+      <%= @user.profile%>
+</div>

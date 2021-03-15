@@ -47,4 +47,6 @@ gem 'activeadmin'
 #bootstrap
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
+#ImageMagickをrailsで使うため
+gem 'mini_magick'
 

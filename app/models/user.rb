@@ -19,6 +19,9 @@ class User < ApplicationRecord
 	validates :profile, length: { maximum: 200 }
 	attr_accessor :login
 
+	#アップロード画像の紐付け
+	has_one_attached :avatar
+
 	#ログイン認証の書き換え(ユーザー名でもメールアドレスでもログインできるようにする)
 	def self.find_first_by_auth_conditions(warden_conditions)
 		conditions = warden_conditions.dup
