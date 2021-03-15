@@ -1,6 +1,5 @@
 <div class="container">
-      
-      <h1><%= @user.username =%></h1>
-      <%=link_to "プロフィール編集", "/users/mypage_edit" %>
+      <h1><%= @user.username %></h1>
+      <%=link_to "プロフィール編集", "/users/:id/edit" %>
       <%= @user.profile%>
 </div>

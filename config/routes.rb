@@ -2,12 +2,9 @@ Rails
 	.application
 	.routes
 	.draw do
-		get 'users/show'
 		root 'static_pages#home'
 		get 'static_pages/home'
 		get 'static_pages/help'
-		get 'users/show' => 'users#show'
-		get 'users/mypage_edit' => 'users#edit'
 		devise_for :users,
 		           controllers: {
 				registrations: 'users/registrations',
