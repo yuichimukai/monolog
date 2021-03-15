@@ -4,7 +4,7 @@
         新規登録
       </h1>
       <div class="mb-4">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :post }) do |f| %>
           <%= render "users/shared/error_messages", resource: resource %>
 
           <div class="form-group">

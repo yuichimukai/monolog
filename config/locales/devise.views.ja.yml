@@ -6,6 +6,8 @@ ja:
           attributes:
             username:
               blank: "が空になっています"
+              taken: "はすでに使用されています"
+              too_short: "が短いです"
             password:
               blank: "が空になっています"
             email:
