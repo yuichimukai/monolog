@@ -21,15 +21,15 @@
                 <div class="dropdown-toggle cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <%= current_user.username %>
                 </div>
-                <div class="dropdown-menu dropdown-danger ">
-                  <a class="dropdown-item", href="users/edit">設定</a>
+                <ul class="dropdown-menu dropdown-danger ">
+                  <li class="dropdown-item"><%= link_to "設定", edit_user_registration_path, class: "link" %></li>
                   <div class="dropdown-divider m-0"></div>
                   <div class="dropdown-divider m-0"></div>
-                  <a class="dropdown-item" href="/users/show">マイページ</a>
+                  <li class="dropdown-item"><%= link_to "マイページ", current_user, class: "link" %></li>
                   <div class="dropdown-divider m-0"></div>
                   <div class="dropdown-divider m-0"></div>
-                  <a class="dropdown-item" rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
-                </div>
+                  <li class="dropdown-item" rel="nofollow"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %></li>
+                </ul>
               </div>
               </li>
             <% else %>

@@ -1,7 +1,5 @@
 <div class="container">
-      <% if user_signed_in? %>
-            <h1><%= current_user.username %></h1>
-      <%=link_to "プロフィール編集", edit_user_path %>
-      <%= current_user.profile%>
-      <% end %>
+<h1><%= @user.username %></h1>
+<%=link_to "プロフィール編集"%>
+<%= @user.profile%>
 </div>

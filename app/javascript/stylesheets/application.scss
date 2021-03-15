@@ -26,6 +26,17 @@
 		font-weight: 600;
 		color: #66615b;
 	}
+	li {
+		a {
+			display: block;
+		}
+	}
+	.dropdown-item {
+		.link {
+			text-decoration: none;
+			color: #66615b;
+		}
+	}
 }
 
 .navbar_logo {
