@@ -1,6 +1,13 @@
 ja:
   activerecord:
     errors:
+      messages:
+        record_invalid: "バリデーションに失敗しました: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+        file_too_large: "はサイズが10メガバイト以内のものを選択してください"
+        file_type_not_image: "はjpg、jpeg、pngのみ選択できます"
       models:
         user:
           attributes:
@@ -15,6 +22,7 @@ ja:
               taken: "はすでに登録されています"
     attributes:
       user:
+        avatar: "プロフィール写真"
         current_password: "現在のパスワード"
         email: "メールアドレス"
         login: "メールアドレス"

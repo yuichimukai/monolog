@@ -49,6 +49,9 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 #ImageMagickをrailsで使うため
 gem 'mini_magick'
+#avatar
+gem 'rails-i18n', '~> 6.0'
+gem 'image_processing', '~> 1.2'
 #amazon S3 storage gem
 #gem 'aws-sdk-s3', require: false
 
