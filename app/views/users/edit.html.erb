@@ -12,6 +12,9 @@
         <div class="form-group">
           <%= f.label :プロフィール写真 %>
           <%= f.file_field :avatar %>
+          <% if @user.avatar.attached? %>
+            <%= @user.avatar.purge %>
+          <% end %>
         </div>
         <div class="form-group">
           <%= f.label :プロフィール%>

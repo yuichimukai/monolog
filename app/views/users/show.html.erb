@@ -8,5 +8,11 @@
 <% if user_signed_in? && @user == current_user %>
   <%=link_to "プロフィール編集", edit_user_path%>
 <% end %>
+
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar, class: "avatar" %>
+<% else %>
+  <%= image_tag ("no-image.png"), class: "avatar" %>
+<% end %>
   <%= @user.profile%>
 </div>
