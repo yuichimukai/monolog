@@ -5,17 +5,17 @@
     <h1>ユーザーページ</h1>
   <% end %>
 
-  <h1><%= @user.username %></h1>
-
-  <% if user_signed_in? && @user == current_user %>
-    <%=link_to "プロフィール編集", edit_user_path%>
-  <% end %>
-
   <% if @user.avatar.attached? %>
-    <%= image_tag @user.avatar.variant(resize:'100x100'),class: "avatar" %>
+    <%= image_tag @user.avatar ,class: "avatar" %>
   <% else %>
     <%= image_tag ("no-image.png"),class: "avatar"%>
   <% end %>
 
-  <%= @user.profile%>
+  <h1><%= @user.username %></h1>
+  <div class="left-container">
+    <%= @user.profile%>
+    <% if user_signed_in? && @user == current_user %>
+      <%=link_to "プロフィール編集", edit_user_path%>
+    <% end %>
+  </div>
 </div>
