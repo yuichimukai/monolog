@@ -14,5 +14,5 @@ Rails
 			get 'sign_in', to: 'users/sessions#new'
 			get 'sign_out', to: 'users/sessions#destroy'
 		end
-		resources :users, only: %i[show edit update]
+		resources :users, only: %i[index show edit update]
 	end

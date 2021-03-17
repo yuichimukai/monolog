@@ -13,7 +13,7 @@ class User < ApplicationRecord
 			case_sensitive: :false,
 	          },
 	          length: {
-			minimum: 4,
+			minimum: 2,
 			maximum: 20,
 	          }
 	validates :profile, length: { maximum: 200 }
