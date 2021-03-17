@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		@user.avatar.attach(params[:avatar]) if @user.avatar.blank?
-		if @user.update(user_params)
+		if @user.update(user_params) && @user.save
 			flash[:success] = 'プロフィールが更新されました'
 			redirect_to @user
 		else
