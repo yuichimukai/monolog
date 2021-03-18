@@ -16,7 +16,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails', groups: %i[development test]
-  gem 'faker', '2.1.2'
 end
 
 group :development do
@@ -54,5 +53,7 @@ gem 'mini_magick'
 gem 'rails-i18n', '~> 6.0'
 gem 'image_processing', '~> 1.2'
 #amazon S3 storage gem
-#gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3', require: false
 gem 'will_paginate',           '3.1.8'
+
+gem 'faker', '2.1.2'
