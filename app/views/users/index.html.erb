@@ -3,23 +3,26 @@
     <h1 class="page-title mb-4">
       ユーザー
     </h1>
-    <div class="users">
-      <ul>
-        <% @users.each do |user| %>
-          <div class="user-list">
-            <% if user.avatar.attached? %>
-              <%= image_tag user.avatar , class: "avatar" %>
-            <% else %>
-              <%= image_tag ("no-image.png"),class: "avatar"%>
-            <% end %>
-            <%= link_to user.username, user %>
-            <% if current_user.admin? %>
-              | <%= link_to "削除", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-            <% end %>
-          </div>
-        <% end %>
-      </ul>
-    </div>
+
+    <%= will_paginate @users , list_classes: %w(pagination justify-content-end)%>
+
+    <ul class="users">
+      <% @users.each do |user| %>
+        <li class="user-list">
+          <% if user.avatar.attached? %>
+            <%= image_tag user.avatar , class: "avatar" %>
+          <% else %>
+            <%= image_tag ("no-image.png"),class: "avatar"%>
+          <% end %>
+          <%= link_to user.username, user %>
+          <% if current_user.admin? %>
+            | <%= link_to "削除", user, method: :delete,
+                                data: { confirm: "You sure?" } %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= will_paginate @users , list_classes: %w(pagination justify-content-end)%>
   </div>
 </div>

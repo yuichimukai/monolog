@@ -22,8 +22,8 @@ class User < ApplicationRecord
 	#アップロード画像の紐付け
 	has_one_attached :avatar
 
-	#avatarのバリデーション
-	# validate :validate_avatar
+	#micropostとの関連付け
+	has_many :microposts
 
 	#ログイン認証の書き換え(ユーザー名でもメールアドレスでもログインできるようにする)
 	def self.find_first_by_auth_conditions(warden_conditions)
