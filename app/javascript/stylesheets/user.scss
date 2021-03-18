@@ -20,6 +20,13 @@
 .users {
 	list-style: none;
 	font-size: 2rem;
+	.user-list {
+		margin-bottom: 20px;
+	}
+	.avatar {
+		width: 150px;
+		height: 150px;
+	}
 	a {
 		text-decoration: none;
 		color: #66615b;

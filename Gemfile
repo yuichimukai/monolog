@@ -10,12 +10,13 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.5'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
-
+gem 'kaminari'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails', groups: %i[development test]
+  gem 'faker', '2.1.2'
 end
 
 group :development do
