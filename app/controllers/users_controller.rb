@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!, only: %i[index show edit update]
+	before_action :authenticate_user!, only: %i[index show edit update destroy]
 	before_action :correct_user, only: %i[edit update]
 
 	def index
@@ -23,6 +23,12 @@ class UsersController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		User.find(params[:id]).destroy
+		flash[:success] = 'ユーザーを削除しました'
+		redirect_to users_path
 	end
 
 	private

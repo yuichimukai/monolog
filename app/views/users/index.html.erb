@@ -4,16 +4,22 @@
       ユーザー
     </h1>
     <div class="users">
-      <% @users.each do |user| %>
-        <div class="user-list">
-          <% if user.avatar.attached? %>
-            <%= image_tag user.avatar , class: "avatar" %>
-          <% else %>
-            <%= image_tag ("no-image.png"),class: "avatar"%>
-          <% end %>
-          <%= link_to user.username, user %>
-        </div>
-      <% end %>
+      <ul>
+        <% @users.each do |user| %>
+          <div class="user-list">
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar , class: "avatar" %>
+            <% else %>
+              <%= image_tag ("no-image.png"),class: "avatar"%>
+            <% end %>
+            <%= link_to user.username, user %>
+            <% if current_user.admin? %>
+              | <%= link_to "削除", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+            <% end %>
+          </div>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

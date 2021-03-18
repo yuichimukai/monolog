@@ -4,6 +4,7 @@ User.create!(
 	email: 'example@gmail.com',
 	password: 'example',
 	password_confirmation: 'example',
+	admin: true,
 )
 
 # 追加のユーザーをまとめて生成する
