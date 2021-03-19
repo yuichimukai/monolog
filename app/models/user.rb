@@ -22,8 +22,8 @@ class User < ApplicationRecord
 	#アップロード画像の紐付け
 	has_one_attached :avatar
 
-	#avatarのバリデーション
-	# validate :validate_avatar
+	#micropostとの関連付け
+	has_many :microposts, dependent: :destroy
 
 	#ログイン認証の書き換え(ユーザー名でもメールアドレスでもログインできるようにする)
 	def self.find_first_by_auth_conditions(warden_conditions)
@@ -54,6 +54,11 @@ class User < ApplicationRecord
 		result = update_attributes(params, *options)
 		clean_up_passwords
 		result
+	end
+
+	# 試作feedの定義
+	def feed
+		Micropost.where('user_id = ?', id)
 	end
 
 	# #avatarのバリデーション内容

@@ -1,11 +1,7 @@
 <div class="container mt-4">
   <div class="row pt-3">
     <div class="right-container col-4 text-center">
-      <% if @user.avatar.attached? %>
-        <%= image_tag @user.avatar ,class: "avatar" %>
-      <% else %>
-        <%= image_tag ("no-image.png"),class: "avatar"%>
-      <% end %>
+      <%= render 'shared/avatar' %>
     </div>
     <div class="left-container col-8">
       <h1 class="pt-3"><%= @user.username %></h1>
@@ -16,5 +12,14 @@
         <%=link_to "プロフィール編集", edit_user_path(current_user) %>
       <% end %>
     </div>
+  </div>
+  <div class="col-12">
+    <% if @user.microposts.any? %>
+      <h3>つぶやき(<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
   </div>
 </div>

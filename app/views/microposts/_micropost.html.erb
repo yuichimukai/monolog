@@ -1,0 +1,22 @@
+<li id="micropost-<%= micropost.id %>" class="row">
+  <div class="avatar-container col-3 text-right">
+    <%= render 'shared/avatar' %>
+  </div>
+  <div class="content-container col-9">
+    <span class="user"><%= link_to micropost.user.username, micropost.user %></span>
+    <span class="content">
+      <%= micropost.content %>
+      <br>
+      <%= image_tag micropost.display_image if micropost.image.attached? %>
+    </span>
+    <span class="timestamp">
+      <%= time_ago_in_words(micropost.created_at) %> ago.
+    </span>
+    <span class="delete">
+      <% if current_user == micropost.user %>
+        <%= link_to "削除する", micropost, method: :delete,
+                                        data: { confirm: "本当に削除しますか？" } %>
+      <% end %>
+    </span>
+  </div>
+</li>

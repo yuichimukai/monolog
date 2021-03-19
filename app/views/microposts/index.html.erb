@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <% @feed_items.each do |micropost| %>
+      <div class="feed-box row">
+        <div class="avatar-container col-3 text-right">
+          <% if micropost.user.avatar.attached? %>
+            <%= image_tag micropost.user.avatar, class:"avatar" %>  
+          <% else %>
+            <%= image_tag ("no-image.png"), class: "avatar"%>
+          <% end %>
+        </div>
+        <div class="content-container col-9">
+          <span class="user"><%= link_to micropost.user.username, micropost.user%></span>
+          <span class="content">
+            <%= link_to micropost.content, "/microposts/#{micropost.id}"%>
+            <br>
+            <%= image_tag micropost.display_image if micropost.image.attached? %>
+          </span>
+          <span class="timestamp">
+            <%= time_ago_in_words(micropost.created_at) %> ago.
+          </span>
+        </div>
+      </div>
+    <% end %>
+    <div class="actions micropost-form-button">
+      <div class="btn btn-round btn-service rounded-pill w-100 h-100">
+        <%= link_to 'つぶやく',new_micropost_path, {class:"text-white"} %>
+      </div>
+    </div>
+    <%= will_paginate @feed_items %>
+</div>
