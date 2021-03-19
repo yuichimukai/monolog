@@ -1,0 +1,80 @@
+/* feed */
+.container {
+	.feed-box {
+		border-bottom: 1px solid #e8e8e8;
+		margin: 0;
+		padding: 10px 0;
+		.user {
+			margin-top: 5em;
+			padding-top: 0;
+			margin-left: 60px;
+		}
+		img.avatar {
+			width: 100px;
+			height: 100px;
+		}
+		.content-container {
+			padding: 0;
+			.content {
+				display: block;
+				margin-left: 60px;
+				a {
+					color: black;
+				}
+			}
+			a {
+				text-decoration: none;
+				color: gray;
+			}
+			.timestamp {
+				display: block;
+				margin-left: 60px;
+				color: #66615b;
+				text-align: right;
+			}
+		}
+	}
+}
+
+/* micropost new */
+.micropost-new_container {
+	border-radius: 20px;
+	margin: 0 auto;
+	padding: 0px 20px;
+	border-left: 2px solid royalblue;
+	border-right: 2px solid lightblue;
+}
+
+.micropost-new_container::before,
+.micropost-new_container::after {
+	content: "";
+	display: block;
+	height: 2px;
+	background: linear-gradient(to right, royalblue 0%, lightblue 100%);
+}
+
+.micropost-form-button {
+	width: 100px;
+	height: 40px;
+	position: fixed;
+	right: 70px;
+	bottom: 100px;
+	a {
+		text-decoration: none;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		.micropost-new_container {
+			max-width: 1030px;
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.micropost-new_container {
+		width: 65%;
+		margin: 0 auto;
+	}
+}

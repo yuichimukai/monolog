@@ -15,4 +15,5 @@ Rails
 			get 'sign_out', to: 'users/sessions#destroy'
 		end
 		resources :users
+		resources :microposts, only: %i[show index new create edit update destroy]
 	end

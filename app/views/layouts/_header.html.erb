@@ -14,10 +14,10 @@
           <ul class="navbar-nav">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to "タイムライン", root_path, class: "nav-link" %>
+                <%= link_to "タイムライン", microposts_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%= link_to "ユーザー一覧", users_path, class: "nav-link" %>
+                <%= link_to "ユーザーを探す", users_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
               <div class="btn-group nav-link">

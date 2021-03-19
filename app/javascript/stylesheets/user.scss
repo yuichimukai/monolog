@@ -40,17 +40,36 @@
 		padding: 10px 0;
 		border-top: 1px solid #e8e8e8;
 	}
+	.avatar-container {
+		display: inline-block;
+	}
 	.user {
 		margin-top: 5em;
 		padding-top: 0;
-	}
-	.content {
-		display: block;
 		margin-left: 60px;
 	}
-	.timestamp {
-		display: block;
-		margin-left: 60px;
-		color: #66615b;
+	img.avatar {
+		width: 100px;
+		height: 100px;
+	}
+	.content-container {
+		padding: 0;
+		a {
+			text-decoration: none;
+			color: gray;
+		}
+		.content {
+			display: block;
+			margin-left: 60px;
+		}
+		.timestamp {
+			display: block;
+			margin-left: 60px;
+			color: #66615b;
+			text-align: right;
+		}
+		.delete {
+			margin-left: 60px;
+		}
 	}
 }
