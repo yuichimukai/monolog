@@ -3,7 +3,6 @@ class Micropost < ApplicationRecord
 
 	#activestorage
 	has_one_attached :image
-	has_one_attached :avatar
 
 	#micropost順序付け
 	default_scope -> { order(created_at: :desc) }
