@@ -5,13 +5,30 @@
 		height: 180px;
 		object-fit: cover;
 	}
-	.left-container {
-		a {
-			color: #66615b;
-			text-decoration: none;
-			border-color: #66615b;
-			border-radius: 30px;
-			border-style: solid;
+	.right-container {
+		.profile-container {
+			padding-left: 10px;
+		}
+		.stats {
+			overflow: auto;
+			margin-top: 0;
+			padding: 0;
+			a {
+				float: left;
+				padding: 0 10px;
+				color: black;
+				text-decoration: none;
+				border-left: none;
+			}
+		}
+		.edit-button {
+			a {
+				color: #66615b;
+				text-decoration: none;
+				border-color: #66615b;
+				border-radius: 30px;
+				border-style: solid;
+			}
 		}
 	}
 }
@@ -22,10 +39,12 @@
 	font-size: 2rem;
 	.user-list {
 		margin-bottom: 20px;
+		padding: 20px 20px;
+		border-bottom: 1px solid gray;
 	}
 	.avatar {
-		width: 150px;
-		height: 150px;
+		width: 100px;
+		height: 100px;
 	}
 	a {
 		text-decoration: none;
@@ -71,5 +90,18 @@
 		.delete {
 			margin-left: 60px;
 		}
+	}
+}
+
+/* follow follower */
+.stats {
+	overflow: auto;
+	margin-top: 0;
+	padding: 0;
+	a {
+		float: left;
+		padding: 0 10px;
+		border-left: 1px solid gray;
+		color: black;
 	}
 }

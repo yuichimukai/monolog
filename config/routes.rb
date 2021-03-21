@@ -14,6 +14,9 @@ Rails
 			get 'sign_in', to: 'users/sessions#new'
 			get 'sign_out', to: 'users/sessions#destroy'
 		end
-		resources :users
+		resources :users do
+			member { get :following, :followers }
+		end
 		resources :microposts, only: %i[show index new create edit update destroy]
+		resources :relationships, only: %i[create destroy]
 	end
