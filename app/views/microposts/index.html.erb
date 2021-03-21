@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <% @feed_items.each do |micropost| %>
-      <div class="feed-box row">
+      <div class="feed-box row pr-4">
         <div class="avatar-container col-3 text-right">
           <% if micropost.user.avatar.attached? %>
             <%= image_tag micropost.user.avatar, class:"avatar" %>  
