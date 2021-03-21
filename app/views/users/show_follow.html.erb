@@ -10,7 +10,7 @@
             <%= image_tag ("no-image.png"),class: "avatar"%>
           <% end %>
           <%= link_to user.username, user %>
-          <%= render 'follow_form' %>
+          <%= render 'follow_form', user: @user %>
         </li>
       <% end %>
     </ul>

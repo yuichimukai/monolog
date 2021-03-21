@@ -80,7 +80,9 @@ class User < ApplicationRecord
 
 	#ユーザーをフォロー
 	def follow(other_user)
-		following << other_user
+		unless self == other_user
+			self.active_relationships.find_or_create_by(followed_id: other_user.id)
+		end
 	end
 
 	#ユーザーをフォロー解除
@@ -90,7 +92,7 @@ class User < ApplicationRecord
 
 	#現在のユーザーがフォローしていたらtrueを返す
 	def following?(other_user)
-		following.include?(other_user)
+		self.following.include?(other_user)
 	end
 	# #avatarのバリデーション内容
 	# def validate_avatar
