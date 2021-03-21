@@ -4,7 +4,6 @@
       ユーザーを探す
     </h1>
 
-    <%= will_paginate @users , list_classes: %w(pagination justify-content-end)%>
 
     <ul class="users">
       <% @users.each do |user| %>
@@ -23,6 +22,6 @@
       <% end %>
     </ul>
 
-    <%= will_paginate @users , list_classes: %w(pagination justify-content-end)%>
+    <%= will_paginate @users , previous_label: '&lt 前へ', next_label: '次へ &gt' %>
   </div>
 </div>

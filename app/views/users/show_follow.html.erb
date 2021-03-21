@@ -10,11 +10,10 @@
             <%= image_tag ("no-image.png"),class: "avatar"%>
           <% end %>
           <%= link_to user.username, user %>
-          <%= render 'follow_form', user: @user %>
         </li>
       <% end %>
     </ul>
 
-    <%= will_paginate @users , list_classes: %w(pagination justify-content-end)%>
+    <%= will_paginate @users , previous_label: '&lt 前へ', next_label: '次へ &gt'%>
   </div>
 </div>

@@ -301,6 +301,40 @@
 	}
 }
 
+/* pagination */
+.pagination {
+	height: 100px;
+	margin: auto;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.pagination a {
+	background-color: grey;
+	text-decoration: none;
+}
+
+.pagination * {
+	color: white;
+	margin: 0 7px;
+	text-decoration: none;
+	padding: 12.5px 18.5px;
+	border-radius: 25px;
+	font-family: "Nunito", sans-serif;
+}
+
+.current {
+	font-style: normal;
+	color: white;
+	background: #93c9ff;
+	border-radius: 22.5px;
+	font-family: "Nunito", sans-serif;
+}
+
+.pagination a:hover {
+	background: #93c9ff;
+}
+
 @media (min-width: 992px) {
 	.top-search {
 		width: 80%;
