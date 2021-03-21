@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!, only: %i[index show edit update destroy]
+	before_action :authenticate_user!,
+	              only: %i[index show edit update destroy following followers]
 	before_action :correct_user, only: %i[edit update]
 	before_action :admin_user, only: :destroy
 
@@ -31,6 +32,20 @@ class UsersController < ApplicationController
 		User.find(params[:id]).destroy
 		flash[:success] = 'ユーザーを削除しました'
 		redirect_to users_path
+	end
+
+	def following
+		@title = 'フォロー'
+		@user = User.find(params[:id])
+		@users = @user.following.paginate(page: params[:page])
+		render 'show_follow'
+	end
+
+	def followers
+		@title = 'フォロワー'
+		@user = User.find(params[:id])
+		@users = @user.followers.paginate(page: params[:page])
+		render 'show_follower'
 	end
 
 	private
