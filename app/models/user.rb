@@ -23,6 +23,9 @@ class User < ApplicationRecord
 	#micropostとの関連付け
 	has_many :microposts, dependent: :destroy
 
+	#likeとの関連づけ
+	has_many :likes, dependent: :destroy
+
 	#能動的関係に関しての関連づけ
 	has_many :active_relationships,
 	         class_name: 'Relationship',

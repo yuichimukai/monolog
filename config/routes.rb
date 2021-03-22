@@ -17,6 +17,8 @@ Rails
 		resources :users do
 			member { get :following, :followers }
 		end
-		resources :microposts, only: %i[show index new create edit update destroy]
+		resources :microposts do
+			resources :likes, only: %i[create destroy]
+		end
 		resources :relationships, only: %i[create destroy]
 	end

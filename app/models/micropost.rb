@@ -1,5 +1,6 @@
 class Micropost < ApplicationRecord
 	belongs_to :user
+	has_many :likes
 
 	#activestorage
 	has_one_attached :image
@@ -25,5 +26,10 @@ class Micropost < ApplicationRecord
 	#表示用のリサイズ済み画像を返すメソッド
 	def display_image
 		image.variant(resize_to_limit: [500, 500])
+	end
+
+	#すでにいいねしていればtrueを返す
+	def liked_by?(user)
+		likes.where(user_id: user.id).exists?
 	end
 end
