@@ -1,1 +1,1 @@
-$("#like-button_<%= @micropost.id %>").html("<%= j(render 'microposts/like-button', micropost: @micropost ) %>");
+document.getElementById('micropost_<%= @micropost.id %>').innerHTML = '<%= j(render @micropost) %>'

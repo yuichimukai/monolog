@@ -1,5 +1,5 @@
 <% if current_user.liked_by?(micropost.id) %>
-  <td><%= link_to 'いいねを外す', destroy_like_path(micropost), method: :delete %><%= micropost.likes.count %></td>
+  <td><%= link_to 'いいねを外す', destroy_like_path(micropost), method: :delete, remote: true %><%= micropost.likes.count %></td>
 <% else %>
-  <td><%= link_to 'いいね', create_like_path(micropost), method: :post %><%= micropost.likes.count %></td>
+  <td><%= link_to 'いいね', create_like_path(micropost), method: :post, remote: true %><%= micropost.likes.count %></td>
 <% end %>

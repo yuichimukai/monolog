@@ -22,9 +22,11 @@
   <div class="col-12">
     <% if @user.microposts.any? %>
       <h3>つぶやき(<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
+        <% @microposts.each do |micropost| %>
+          <div id= "micropost_<%= micropost.id %>">
+            <%= render 'microposts/micropost', micropost: micropost %>
+          </div>
+        <% end %>
       <%= will_paginate @microposts %>
     <% end %>
   </div>
