@@ -5,7 +5,7 @@
   <div class="content-container col-9">
     <span class="user"><%= link_to micropost.user.username, micropost.user %></span>
     <span class="content">
-      <%= micropost.content %>
+      <%= link_to micropost.content, "/microposts/#{micropost.id}" %>
       <br>
       <%= image_tag micropost.display_image if micropost.image.attached? %>
     </span>

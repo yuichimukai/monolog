@@ -97,6 +97,10 @@ class User < ApplicationRecord
 	def following?(other_user)
 		self.following.include?(other_user)
 	end
+
+	def liked_by?(micropost_id)
+		likes.where(micropost_id: micropost_id).exists?
+	end
 	# #avatarのバリデーション内容
 	# def validate_avatar
 	# 	return unless avatar.attached?

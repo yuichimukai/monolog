@@ -27,9 +27,4 @@ class Micropost < ApplicationRecord
 	def display_image
 		image.variant(resize_to_limit: [500, 500])
 	end
-
-	#すでにいいねしていればtrueを返す
-	def liked_by?(user)
-		likes.where(user_id: user.id).exists?
-	end
 end

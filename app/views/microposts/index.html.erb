@@ -15,6 +15,9 @@
             <br>
             <%= image_tag micropost.display_image if micropost.image.attached? %>
           </span>
+          <span id= 'like-button_#{ micropost.id }'>
+            <%= render 'like-button', micropost: micropost %>
+          </span>
           <span class="timestamp">
             <%= time_ago_in_words(micropost.created_at) %> ago.
           </span>
