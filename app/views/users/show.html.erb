@@ -22,12 +22,14 @@
   <div class="col-12">
     <% if @user.microposts.any? %>
       <h3>つぶやき(<%= @user.microposts.count %>)</h3>
+      <div class="container mt-4">
         <% @microposts.each do |micropost| %>
-          <div id= "micropost_<%= micropost.id %>">
+          <div class="feed-box row pr-4" id= "micropost_<%= micropost.id %>">
             <%= render 'microposts/micropost', micropost: micropost %>
           </div>
         <% end %>
-      <%= will_paginate @microposts %>
+      </div>
+      <%= paginate @microposts %>
     <% end %>
   </div>
 </div>

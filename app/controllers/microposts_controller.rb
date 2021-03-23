@@ -3,7 +3,7 @@ class MicropostsController < ApplicationController
 	before_action :correct_user, only: %i[edit update destroy]
 
 	def index
-		@feed_items = current_user.feed.paginate(page: params[:page])
+		@feed_items = current_user.feed.page(params[:page])
 	end
 
 	def new
@@ -17,7 +17,7 @@ class MicropostsController < ApplicationController
 			flash[:success] = 'ツイートが作成されました'
 			redirect_to action: :index
 		else
-			@feed_items = current_user.feed.paginate(page: params[:page])
+			@feed_items = current_user.feed.page(params[:page])
 			redirect_to action: :new
 		end
 	end

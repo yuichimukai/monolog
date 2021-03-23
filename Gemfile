@@ -57,8 +57,5 @@ gem 'aws-sdk-s3', require: false
 gem 'will_paginate',           '3.1.8'
 
 gem 'faker', '2.1.2'
-#仮ページネーション
-gem 'will_paginate',           '3.1.8'
-gem 'will_paginate-bootstrap4'
 #activestorage validation
 gem 'active_storage_validations'
