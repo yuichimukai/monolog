@@ -6,12 +6,10 @@
     <%= render partial: 'comments/index', locals: { comments: @comments } %>
   </div>
   <div class="comment_form">
-    <% if user_signed_in? %>
-        <div class="comment-create">
-            <h3 class="text-left">コメントを投稿する</h3>
-            <%= render partial: 'comments/form', locals: { comment: @comment, micropost: @micropost } %>
-        </div>
-    <% end %>
+    <div class="comment-create">
+        <h3 class="text-left">コメントを投稿する</h3>
+        <%= render partial: 'comments/form', locals: { comment: @comment, micropost: @micropost } %>
+    </div>
   </div>
   <%= link_to "戻る", :back%>
 </div>

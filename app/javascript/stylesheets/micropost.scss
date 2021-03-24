@@ -61,6 +61,41 @@
 	}
 }
 
+/* comment area */
+#comments_area {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.collapse {
+	.user {
+		margin-top: 5em;
+		padding-top: 0;
+	}
+	img.avatar {
+		width: 100px;
+		height: 100px;
+	}
+	.content-container {
+		.content {
+			display: block;
+			a {
+				color: black;
+			}
+		}
+		a {
+			text-decoration: none;
+			color: gray;
+		}
+		.timestamp {
+			padding-right: 60px;
+			display: block;
+			color: #66615b;
+			text-align: right;
+		}
+	}
+}
+
 @media (min-width: 1200px) {
 	.container {
 		.micropost-new_container {

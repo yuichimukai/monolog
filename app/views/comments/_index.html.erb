@@ -7,9 +7,9 @@
             <div class="comment-avatar">
             </div>
             <div class="comment-text">
-                <p><%= link_to "@#{comment.user.username}", users_path(comment.user.id) %></p>
+                <p><%= link_to "@#{comment.user.username}", user_path(comment.user.id) %></p>
                 <div class="comment-entry">
-                    <%= comment.text%>
+                    <%= comment.text %>
                     <% if comment.user == current_user %>
                         <%= link_to micropost_comment_path(comment.micropost_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
                             <i class="fas fa-trash" style="color: black;"></i>
@@ -24,7 +24,7 @@
     </li>
   <% end %>
 <% end %>
-
+<!--コメント三件目以降-->
 <div class="collapse" id="collapseExample">
   <% comments.offset(2).each do |comment| %>
     <% unless comment.id.nil? %>
@@ -33,7 +33,7 @@
               <div class="comment-avatar">
               </div>
               <div class="comment-text">
-                  <p><%= link_to "@#{comment.user.username}" %></p>
+                  <p><%= link_to "@#{comment.user.username}", user_path(comment.user.id) %></p>
                   <div class="comment-entry">
                       <%= comment.text %>
                       <% if comment.user == current_user %>
