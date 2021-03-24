@@ -1,0 +1,4 @@
+<%= form_with(model: [micropost, comment], url: micropost_comments_path(@micropost), remote: true ) do |f| %>
+    <%= f.text_area :text, class: "input-mysize" %>
+    <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
+<% end %>

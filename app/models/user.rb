@@ -26,6 +26,9 @@ class User < ApplicationRecord
 	#likeとの関連づけ
 	has_many :likes, dependent: :destroy
 
+	#コメントとの関連付け
+	has_many :comments, dependent: :destroy
+
 	#能動的関係に関しての関連づけ
 	has_many :active_relationships,
 	         class_name: 'Relationship',

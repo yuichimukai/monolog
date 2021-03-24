@@ -17,7 +17,9 @@ Rails
 		resources :users do
 			member { get :following, :followers }
 		end
-		resources :microposts
+		resources :microposts do
+			resources :comments, only: %i[create destroy]
+		end
 		post 'like/:id' => 'likes#create', :as => 'create_like'
 		delete 'like/:id' => 'likes#destroy', :as => 'destroy_like'
 		resources :relationships, only: %i[create destroy]

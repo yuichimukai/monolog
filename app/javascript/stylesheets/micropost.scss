@@ -13,7 +13,6 @@
 			height: 100px;
 		}
 		.content-container {
-			padding: 0;
 			.content {
 				display: block;
 				a {
@@ -25,6 +24,7 @@
 				color: gray;
 			}
 			.timestamp {
+				padding-right: 60px;
 				display: block;
 				color: #66615b;
 				text-align: right;
