@@ -8,9 +8,11 @@ Rails
 		devise_for :users,
 		           controllers: {
 				registrations: 'users/registrations',
+				passwords: 'users/passwords',
 				sessions: 'users/sessions',
 		           }
 		devise_scope :user do
+			post 'users/guest_sign_in', to: 'users/sessions#new_guest'
 			get 'sign_in', to: 'users/sessions#new'
 			get 'sign_out', to: 'users/sessions#destroy'
 		end

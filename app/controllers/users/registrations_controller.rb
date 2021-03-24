@@ -2,6 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 	before_action :configure_sign_up_params, only: [:login]
+	before_action :ensure_normal_user, only: %i[update destroy]
 
 	# before_action :configure_account_update_params, only: [:update]
 	# GET /resource/sign_up
@@ -50,6 +51,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 		@user = User.friendly.find(params[:id])
 		@users = @user.followers
 		render 'show_follow'
+	end
+
+	#ゲストユーザーが削除機能を利用できないようにする
+	def ensure_normal_user
+		if resource.email == 'guest@example.com'
+			redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません'
+		end
 	end
 
 	# If you have extra params to permit, append them to the sanitizer.

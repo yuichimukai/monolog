@@ -58,6 +58,13 @@ class User < ApplicationRecord
 		end
 	end
 
+	#簡単ログイン機能のためのゲストユーザーを探す・作成する
+	def self.guest
+		find_or_create_by!(username: 'guest', email: 'guest@example.com') do |user|
+			user.password = SecureRandom.urlsafe_base64
+		end
+	end
+
 	#devise password入力なしでユーザー情報の更新を行う
 	def update_without_current_password(params, *options)
 		params.delete(:current_password)
