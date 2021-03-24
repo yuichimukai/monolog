@@ -1,0 +1,36 @@
+#comments_area {
+	.more {
+		cursor: pointer;
+	}
+	.comment-container {
+		list-style: none;
+		.comment-box {
+			img.avatar {
+				width: 90px;
+				height: 90px;
+			}
+			.user {
+				a {
+					text-decoration: none;
+					color: gray;
+				}
+			}
+			.comment-date {
+				text-align: right;
+				display: block;
+				color: gray;
+			}
+		}
+	}
+}
+
+.container {
+	.comments_container {
+		width: 80%;
+		margin: 0 auto;
+	}
+	.comment_form {
+		width: 80%;
+		margin: 0 auto;
+	}
+}

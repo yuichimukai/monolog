@@ -1,13 +1,18 @@
-<%= comments.count %>件コメント
+<%= comments.count %>件のコメント
 <h6 class="more" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h6>
 <% comments.first(2).each do |comment| %>
   <% unless comment.id.nil? %>
     <li class="comment-container">
-        <div class="comment-box">
-            <div class="comment-avatar">
+        <div class="comment-box row">
+            <div class="comment-avatar col-3">
+              <% if comment.user.avatar.attached? %>
+                <%= image_tag comment.user.avatar, class:"avatar" %>  
+              <% else %>
+                <%= image_tag ("no-image.png"), class: "avatar"%>
+              <% end %>
             </div>
-            <div class="comment-text">
-                <p><%= link_to "@#{comment.user.username}", user_path(comment.user.id) %></p>
+            <div class="comment-text col-9">
+                <span class="user"><%= link_to "@#{comment.user.username}", user_path(comment.user.id) %></span>
                 <div class="comment-entry">
                     <%= comment.text %>
                     <% if comment.user == current_user %>
@@ -16,7 +21,7 @@
                         <% end %>
                     <% end %>
                 </div>
-                <span class="comment-date pull-right">
+                <span class="comment-date">
                       <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
                 </span>
             </div>
@@ -29,11 +34,16 @@
   <% comments.offset(2).each do |comment| %>
     <% unless comment.id.nil? %>
       <li class="comment-container">
-          <div class="comment-box">
-              <div class="comment-avatar">
+          <div class="comment-box row">
+              <div class="comment-avatar col-3">
+                <% if comment.user.avatar.attached? %>
+                  <%= image_tag comment.user.avatar, class:"avatar" %>  
+                <% else %>
+                  <%= image_tag ("no-image.png"), class: "avatar"%>
+                <% end %>
               </div>
-              <div class="comment-text">
-                  <p><%= link_to "@#{comment.user.username}", user_path(comment.user.id) %></p>
+              <div class="comment-text col-9">
+                  <span class="user"><%= link_to "@#{comment.user.username}", user_path(comment.user.id) %></span>
                   <div class="comment-entry">
                       <%= comment.text %>
                       <% if comment.user == current_user %>
