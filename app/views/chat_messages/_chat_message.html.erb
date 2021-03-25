@@ -1,3 +1,21 @@
 <div class="chat-message">
-  <%= chat_message.content %>
+  <% if chat_message.user.id != current_user.id %>
+    <div class="chat-message__partner">
+      <% if @chat_room_user.avatar.attached? %>
+        <%= image_tag @chat_room_user.avatar, class: "chat-avatar" %>
+      <% else %>
+        <%= image_tag ("no-image.png"),class: "chat-avatar"%>
+      <% end %>
+
+      <div class="chat-message__content">
+        <%= chat_message.content %>
+      </div>
+    </div>
+  <% else %>
+    <div class="chat-message__current-user">
+      <div class="chat-message__content main-color-bg">
+        <%= chat_message.content %>
+      </div>
+    </div>
+  <% end %>
 </div>
