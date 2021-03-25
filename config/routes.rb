@@ -25,4 +25,5 @@ Rails
 		post 'like/:id' => 'likes#create', :as => 'create_like'
 		delete 'like/:id' => 'likes#destroy', :as => 'destroy_like'
 		resources :relationships, only: %i[create destroy]
+		resources :chat_rooms, only: %i[create show]
 	end

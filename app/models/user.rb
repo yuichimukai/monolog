@@ -29,6 +29,10 @@ class User < ApplicationRecord
 	#コメントとの関連付け
 	has_many :comments, dependent: :destroy
 
+	has_many :chat_room_users
+	has_many :chat_rooms, through: :chat_room_users
+	has_many :chat_messages
+
 	#能動的関係に関しての関連づけ
 	has_many :active_relationships,
 	         class_name: 'Relationship',

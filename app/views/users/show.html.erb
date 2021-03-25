@@ -5,6 +5,7 @@
     </div>
     <div class="right-container col-8">
       <h1 class="pt-3"><%= @user.username %></h1>
+      <%= link_to "メッセージを送る", chat_rooms_path(params: {user_id: @user.id}), method: :post unless current_user?(@user) %>
       <div class="profile-container">
         <%= @user.profile%>
       </div>

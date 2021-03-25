@@ -1,0 +1,89 @@
+/* トークルーム一覧　*/
+.rooms {
+	margin: 0 auto;
+	background-color: #fdfdfd;
+	border: 2px solid #eee;
+	padding: 1em 2em;
+}
+
+/* チャットの吹き出し */
+#chats {
+	padding: 20px 10px;
+	max-width: 450px;
+	margin: 15px auto;
+	text-align: right;
+	font-size: 14px;
+	background: #7da4cd;
+}
+.fukidasi {
+	width: 100%;
+	margin: 10px 0;
+	overflow: hidden;
+}
+.fukidasi .faceicon {
+	float: left;
+	margin-right: -50px;
+	width: 40px;
+}
+.fukidasi .faceicon img {
+	width: 90%;
+	height: auto;
+	border-radius: 50%;
+}
+.fukidasi .chatting {
+	width: 100%;
+	text-align: left;
+}
+.says {
+	display: inline-block;
+	position: relative;
+	margin: 0 0 0 50px;
+	padding: 10px;
+	max-width: 250px;
+	border-radius: 12px;
+	background: #edf1ee;
+}
+.says:after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	top: 3px;
+	left: -19px;
+	border: 8px solid transparent;
+	border-right: 18px solid #edf1ee;
+	-webkit-transform: rotate(35deg);
+	transform: rotate(35deg);
+}
+.says p {
+	margin: 0;
+	padding: 0;
+}
+.mycomment {
+	margin: 10px 0;
+}
+.mycomment p {
+	display: inline-block;
+	position: relative;
+	margin: 0 10px 0 0;
+	padding: 8px;
+	max-width: 250px;
+	border-radius: 12px;
+	background: #30e852;
+	font-size: 15px;
+}
+.mycomment p:after {
+	content: "";
+	position: absolute;
+	top: 3px;
+	right: -19px;
+	border: 8px solid transparent;
+	border-left: 18px solid #30e852;
+	-webkit-transform: rotate(-35deg);
+	transform: rotate(-35deg);
+}
+
+/* 送信フォーム */
+#send-form {
+	text-align: center;
+	margin-bottom: 200px;
+}
