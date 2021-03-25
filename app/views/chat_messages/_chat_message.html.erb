@@ -2,9 +2,9 @@
   <% if chat_message.user.id != current_user.id %>
     <div class="chat-message__partner">
       <% if @chat_room_user.avatar.attached? %>
-        <%= image_tag @chat_room_user.avatar, class: "chat-avatar" %>
+        <%= image_tag @chat_room_user.avatar, class: "chat-message__partner-img" %>
       <% else %>
-        <%= image_tag ("no-image.png"),class: "chat-avatar"%>
+        <%= image_tag ("no-image.png"),class: "chat-message__partner-img"%>
       <% end %>
 
       <div class="chat-message__content">
