@@ -16,7 +16,13 @@
 
     <%= render 'layouts/alert' %>
 
-      <%= yield %>
+    <% unless user_signed_in? %>
+      <div class="guest-login text-center">
+      <%= link_to '簡単ログイン（レビューの投稿・タイムラインが利用できます）', users_guest_sign_in_path, method: :post%>
+      </div>
+    <% end %>
+    
+    <%= yield %>
 
   </body>
 </html>

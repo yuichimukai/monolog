@@ -5,6 +5,15 @@
 @import "./like.scss";
 @import "./comment.scss";
 
+.guest-login {
+	background: lightblue;
+	padding: 10px 0;
+	a {
+		text-decoration: none;
+		color: #66615b;
+		font-size: 18px;
+	}
+}
 .alert {
 	margin-bottom: 0;
 }
