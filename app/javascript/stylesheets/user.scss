@@ -6,6 +6,16 @@
 		object-fit: cover;
 	}
 	.right-container {
+		h1 {
+			display: inline-block;
+			margin: 0;
+		}
+		a {
+			margin-left: 10px;
+			.fa-envelope {
+				font-size: 25px;
+			}
+		}
 		.profile-container {
 			padding-left: 10px;
 		}
