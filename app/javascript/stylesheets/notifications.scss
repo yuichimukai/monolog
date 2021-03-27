@@ -1,3 +1,12 @@
+.form-inline {
+	img.mini-avatar {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+}
+
 .n-circle {
 	position: absolute;
 	padding-left: 1rem;

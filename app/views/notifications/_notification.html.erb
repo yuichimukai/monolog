@@ -1,9 +1,14 @@
 <% visitor = notification.visitor %>
 <% visited = notification.visited %>
-<div class="col-md-6 mx-auto">
+<div class="col-md-6 mx-auto mt-5">
   <div class="form-inline">
     <span>
       <%=link_to user_path(visitor) do %>
+        <% if visitor.avatar.attached? %>
+          <%= image_tag visitor.user.avatar, class:"mini-avatar"%>
+        <% else %>
+          <%= image_tag ("no-image.png"), class:"mini-avatar" %>
+        <% end %>
         <strong><%= visitor.username %></strong>
       <% end %>
       さんが
