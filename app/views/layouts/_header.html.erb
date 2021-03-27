@@ -18,7 +18,14 @@
               </li>
               <li class="nav-item">
                 <%= link_to notifications_path, class: "nav-link" do %>
-                  <i class="fas fa-bell"></i>
+                  <%if unchecked_notifications.any? %>
+                    <span class="fa-stack">
+                      <i class="far fa-bell fa-lg fa-stack-2x " style= "font-size:1.5rem;"></i>
+                      <i class="fas fa-circle n-circle fa-stack-1x"></i>
+                    </span>
+                  <% else %>
+                    <i class="far fa-bell fa-lg" style="font-size: 1.5rem;"></i>
+                  <% end %>
                 <% end %>
               </li>
               <li class="nav-item">
