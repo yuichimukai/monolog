@@ -7,6 +7,13 @@ User.create!(
 	admin: true,
 )
 
+User.create!(
+	username: 'guest',
+	email: 'guest@example.com',
+	password: 'guest1',
+	password_confirmation: 'guest1',
+)
+
 # 追加のユーザーをまとめて生成する
 99.times do |n|
 	username = Faker::Name.name
@@ -34,6 +41,13 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+user1 = User.find_by(username: 'guest', email: 'guest@example.com')
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user1.follow(followed) }
+followers.each { |follower| follower.follow(user1) }
+
 if Rails.env.development?
 	AdminUser.create!(
 		email: 'admin@example.com',

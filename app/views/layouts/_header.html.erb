@@ -17,7 +17,10 @@
                 <%= link_to "タイムライン", microposts_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%= link_to "ユーザーを探す", users_path, class: "nav-link" %>
+                <%= link_to "通知", microposts_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ユーザー", users_path, class: "nav-link" if current_user.admin? %>
               </li>
               <li class="nav-item">
               <div class="btn-group nav-link">
