@@ -33,6 +33,16 @@ class User < ApplicationRecord
 	has_many :chat_rooms, through: :chat_room_users
 	has_many :chat_messages
 
+	#通知モデルとの関連づけ
+	has_many :active_notifications,
+	         class_name: 'Notification',
+	         foreign_key: 'visitor_id',
+	         dependent: :destroy
+	has_many :passive_notifications,
+	         class_name: 'Notification',
+	         foreign_key: 'visited_id',
+	         dependent: :destroy
+
 	#能動的関係に関しての関連づけ
 	has_many :active_relationships,
 	         class_name: 'Relationship',
@@ -114,6 +124,23 @@ class User < ApplicationRecord
 
 	def liked_by?(micropost_id)
 		likes.where(micropost_id: micropost_id).exists?
+	end
+
+	def create_notification_follow!(current_user)
+		temp =
+			Notification.where(
+				[
+					'visitor_id = ? and visited_id = ? and action = ? ',
+					current_user.id,
+					id,
+					'follow',
+				],
+			)
+		if temp.blank?
+			notification =
+				current_user.active_notifications.new(visited_id: id, action: 'follow')
+			notification.save if notification.valid?
+		end
 	end
 	# #avatarのバリデーション内容
 	# def validate_avatar

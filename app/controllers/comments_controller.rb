@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
 		@comment = @micropost.comments.build(comment_params)
 		@comment.user_id = current_user.id
 		@comment.save
+		@micropost.create_notification_comment!(current_user, @comment.id)
 		render :index
 	end
 

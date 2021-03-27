@@ -26,4 +26,5 @@ Rails
 		delete 'like/:id' => 'likes#destroy', :as => 'destroy_like'
 		resources :relationships, only: %i[create destroy]
 		resources :chat_rooms, only: %i[create show]
+		resources :notifications, only: :index
 	end
