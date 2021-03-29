@@ -58,3 +58,5 @@ gem 'aws-sdk-s3', require: false
 gem 'faker', '2.1.2'
 #activestorage validation
 gem 'active_storage_validations'
+#楽天api
+gem 'rakuten_web_service'
