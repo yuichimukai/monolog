@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_045729) do
+ActiveRecord::Schema.define(version: 2021_04_01_050538) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -92,16 +92,12 @@ ActiveRecord::Schema.define(version: 2021_03_28_045729) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.text "url"
-    t.string "image_url"
-    t.string "asin"
+    t.string "item_name"
+    t.text "item_url"
+    t.string "item_image_url"
     t.string "price"
-    t.string "brand_amazon_name"
-    t.text "offficial_url"
     t.string "brand_id"
     t.string "category_id"
-    t.string "point"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

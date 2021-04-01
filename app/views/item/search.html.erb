@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="search-box">
+    <%= form_with url: item_search_path, method: :get, local: true do |f| %>
+      <div class="form-group">
+        <%= f.label :商品を検索 %>
+        <%= f.text_field :keyword, class: "form-control" %>
+      </div>
+      <div class="actions text-center">
+        <%= f.submit "検索", class: "btn btn-round btn-service w-50 text-white rounded-pill"%>
+      </div>
+    <% end %>
+    <% if @items %>
+      <%= render 'item/item' %>
+    <% end %>
+  </div>
+</div>

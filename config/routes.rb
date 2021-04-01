@@ -5,6 +5,7 @@ Rails
 		root 'static_pages#home'
 		get 'static_pages/home'
 		get 'static_pages/help'
+		get 'item/search'
 		devise_for :users,
 		           controllers: {
 				registrations: 'users/registrations',

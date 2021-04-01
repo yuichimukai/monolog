@@ -1,0 +1,12 @@
+<% @items.each do |item| %>
+  <div class="item-container">
+    <%= link_to image_tag(item.item_image_url), item.item_url %>
+    <%= item.item_name %>
+    <%= item.price %>円
+  </div>
+  <div class="item_submit">
+    <div class="btn btn-service btn-round">
+      <%= link_to '登録', new_item_path(item: {item_image_url: item.item_image_url, price: item.price, url: item.item_url }), {class:"text-white"} %>
+    </div>
+  </div>
+<% end %>
