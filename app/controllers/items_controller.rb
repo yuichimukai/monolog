@@ -1,4 +1,4 @@
-class ItemController < ApplicationController
+class ItemsController < ApplicationController
 	def search
 		@items = []
 
@@ -13,12 +13,20 @@ class ItemController < ApplicationController
 		end
 	end
 
-	def create; end
-
 	def new
+		@item = Item.new
 		@image = params[:item][:item_image_url]
-		@link = params[:item][:url]
 		@price = params[:item][:price]
+		@link = params[:item][:url]
+	end
+
+	def create
+		@item = Item.new(item_params)
+		if @item.save
+			redirect_to root_path
+		else
+			render :new
+		end
 	end
 
 	private
@@ -35,5 +43,9 @@ class ItemController < ApplicationController
 			item_image_url: item_image_url,
 			price: price,
 		}
+	end
+
+	def item_params
+		params.require(:item).permit(:item_image_url, :price, :item_url, :item_name)
 	end
 end

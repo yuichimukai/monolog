@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <div class="micropost-new_container mt-3">
+    <h1 class="page-title">
+      商品登録
+    </h1>
+    <div class="mb-4">
+      <%= form_with model: @item, local:true do |f| %>
+        <div class="form-group">
+          <%= f.label "商品名"%>
+          <%= f.text_field :item_name %>
+        </div>
+        <div class="form-group">
+          <%= image_tag(@image) %>
+          <%= f.hidden_field :item_image_url, value: params[:item][:item_image_url] %>
+        </div>
+        <div class="item_url">
+          <%= f.hidden_field :item_url, value: params[:item][:url] %>
+        </div>
+        <div class="item_price">
+          <%= @price%>円
+          <%= f.hidden_field :price, value: params[:item][:price] %>
+        </div>
+        <div class="category">
+        </div>
+        <div class="action text-center">
+          <%= f.submit "商品登録", class: "btn btn-round btn-service text-white rounded-pill" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="back-container mb-2">
+      <%= link_to "戻る", 'javascript:history.back()' %>
+    </div>
+  </div>
+</div>

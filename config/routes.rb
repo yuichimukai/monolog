@@ -5,7 +5,7 @@ Rails
 		root 'static_pages#home'
 		get 'static_pages/home'
 		get 'static_pages/help'
-		get 'item/search'
+		get 'items/search'
 		devise_for :users,
 		           controllers: {
 				registrations: 'users/registrations',
@@ -23,7 +23,7 @@ Rails
 		resources :microposts do
 			resources :comments, only: %i[create destroy]
 		end
-		resources :item
+		resources :items
 		post 'like/:id' => 'likes#create', :as => 'create_like'
 		delete 'like/:id' => 'likes#destroy', :as => 'destroy_like'
 		resources :relationships, only: %i[create destroy]
