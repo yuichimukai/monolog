@@ -1,0 +1,12 @@
+<div class="container">
+    <h2 class="text-center">カテゴリの追加</h2>
+    <%= form_with model: @category, local: true do |f| %>
+        <div class="form_input">
+            <%= f.label :name %>
+            <%= f.text_field :name, class:"form-control" %>
+        </div>
+        <div class="form_action text-center pt-3">
+            <%= f.submit "登録する", class: "btn btn-service btn-round text-white" %>
+        </div>
+    <% end %>
+</div>

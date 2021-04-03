@@ -60,3 +60,5 @@ gem 'faker', '2.1.2'
 gem 'active_storage_validations'
 #楽天api
 gem 'rakuten_web_service'
+#compile
+# gem 'sassc-rails'

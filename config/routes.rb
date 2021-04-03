@@ -29,4 +29,5 @@ Rails
 		resources :relationships, only: %i[create destroy]
 		resources :chat_rooms, only: %i[create show]
 		resources :notifications, only: :index
+		resources :categories
 	end

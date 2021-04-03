@@ -29,6 +29,8 @@ class ItemsController < ApplicationController
 		end
 	end
 
+	def show; end
+
 	private
 
 	def read(result)
@@ -46,6 +48,8 @@ class ItemsController < ApplicationController
 	end
 
 	def item_params
-		params.require(:item).permit(:item_image_url, :price, :item_url, :item_name)
+		params
+			.require(:item)
+			.permit(:item_image_url, :price, :item_url, :item_name, :category_id)
 	end
 end
