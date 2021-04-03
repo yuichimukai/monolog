@@ -25,6 +25,7 @@
           <%= f.collection_select :category_id, Category.all,:id, :name, :include_blank => "カテゴリを選択" %>
         </div>
         <div class="tag">
+          <%= f.text_field :tag_ids, class: "form-control", id:'tag_ids', placeholder: "スペースで区切りタグをつける" %>
         </div>
         <div class="action text-center">
           <%= f.submit "商品登録", class: "btn btn-round btn-service text-white rounded-pill" %>

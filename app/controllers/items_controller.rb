@@ -22,7 +22,10 @@ class ItemsController < ApplicationController
 
 	def create
 		@item = Item.new(item_params)
+		tag_list = params[:item][:tag_ids].split(nil)
 		if @item.save
+			@item.save_tags(tag_list)
+			flash[:success] = '商品を登録しました'
 			redirect_to root_path
 		else
 			render :new

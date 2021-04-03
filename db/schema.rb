@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_042130) do
+ActiveRecord::Schema.define(version: 2021_04_03_065211) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -149,6 +149,22 @@ ActiveRecord::Schema.define(version: 2021_04_03_042130) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
+  create_table "tag_relationsips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id", "tag_id"], name: "index_tag_relationsips_on_item_id_and_tag_id", unique: true
+    t.index ["item_id"], name: "index_tag_relationsips_on_item_id"
+    t.index ["tag_id"], name: "index_tag_relationsips_on_tag_id"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -171,4 +187,6 @@ ActiveRecord::Schema.define(version: 2021_04_03_042130) do
   add_foreign_key "chat_room_users", "chat_rooms"
   add_foreign_key "chat_room_users", "users"
   add_foreign_key "microposts", "users"
+  add_foreign_key "tag_relationsips", "items"
+  add_foreign_key "tag_relationsips", "tags"
 end
