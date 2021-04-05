@@ -1,0 +1,48 @@
+.item_index_card {
+	border: 1px solid #e2e2e2;
+	box-shadow: 0px 5px 10px 0px #dadada;
+	border-radius: 0;
+	position: relative;
+	a {
+		text-decoration: none;
+		background-color: transparent;
+		cursor: pointer;
+	}
+	.item_index_card_image_wrap {
+		overflow: hidden;
+		.item_card_image {
+			width: 160px;
+			height: 180px;
+			object-fit: cover;
+			transition: 0.3s;
+		}
+	}
+	.item_index_card_info_wrap {
+		.item_index_card_contents {
+			.item_index_card_item_name {
+				font-size: 25px;
+				font-weight: 600;
+				margin-bottom: -5px;
+			}
+		}
+		.d-flex {
+			.star-rating {
+				display: flex;
+				align-items: center;
+				.star-rating_star_wrapper {
+					position: relative;
+					.star-rating_front {
+						position: absolute;
+						top: 0;
+						left: 0;
+						overflow: hidden;
+						color: #fc3;
+					}
+					.star-rating_back {
+						color: #ccc;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,65 @@
+<div class="container mt-4">
+    <div class="item_feed">
+      <div class="row">
+        <div class="col-12 col-lg-9">
+          <div class="d-none d-md-block">
+            <% @items.each do |item| %>
+              <div class="no-transition item_index_card mb-5">
+                  <div class="item_index_card_ranking">
+                  </div>
+                  <div class="d-flex">
+                    <div class="item_index_card_image_wrap">
+                      <%= image_tag item.item_image_url, class: "item_card_image" %>
+                    </div>
+                    <div class="item_index_card_info_wrap">
+                      <div class="item_index_card_contents">
+                        <div class="item_index_card_item_name">
+                          <%= item.item_name%>      
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <div class="star-rating item_index_card_star_rating">
+                          <div class="star-rating_star_wrapper">
+                            <div class="star-rating_front" style="width: 87.0%">★★★★★</div>
+                            <div class="star-rating_back"></div>
+                          </div>
+                          <div class="star-rating_score ml-1">
+                            4.34
+                          </div>
+                          <div class="star-rating_count">
+                            (全5件)
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item_index_card_item_price">
+                        <%= item.price %>
+                      </div>
+                      <div class="item_index_card_item_link">
+                        <%= link_to "リンク", item.item_url %>
+                      </div>
+                      <div class="item_index_card_item_tag">
+                          <% item.tags.each do |tag| %>
+                            <span>
+                              <%= tag.name %>
+                            </span>
+                          <% end %>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="d-none d-lg-block col-lg-3 pr-lg-0">
+          <div class="side-bar-group">
+            <div class="d-flex mb-2">
+              <div class="side-bar-group-title">
+                種類で探す
+              </div>
+            </div>
+          </div>
+          <div class="side-bar-group"></div>
+        </div>
+      </div>
+    </div>
+</div>
