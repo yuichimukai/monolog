@@ -32,7 +32,9 @@ class ItemsController < ApplicationController
 		end
 	end
 
-	def show; end
+	def show
+		@item = Item.find(params[:id])
+	end
 
 	def index
 		@items = Item.all.page(params[:page])
