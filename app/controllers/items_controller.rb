@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
 		if @item.save
 			@item.save_tags(tag_list)
 			flash[:success] = '商品を登録しました'
-			redirect_to root_path
+			redirect_to items_path
 		else
 			render :new
 		end

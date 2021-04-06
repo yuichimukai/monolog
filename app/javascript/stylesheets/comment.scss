@@ -15,10 +15,13 @@
 					color: gray;
 				}
 			}
-			.comment-date {
+			.time-trash {
 				text-align: right;
-				display: block;
-				color: gray;
+				.comment-date {
+					text-align: right;
+					display: inline-block;
+					color: gray;
+				}
 			}
 		}
 	}

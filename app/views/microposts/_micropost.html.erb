@@ -15,6 +15,12 @@
   <span class="like">
     <%= render 'microposts/like-button', micropost: micropost %>
   </span>
+  <span class="comment ml-2">
+    <%= link_to "/microposts/#{micropost.id}", class: "comment-button" do %>
+      <i class="far fa-comment"></i>
+    <% end %>
+    <%= micropost.comments.count %>
+  </span>
   <span class="timestamp">
     <%= time_ago_in_words(micropost.created_at) %> ago.
   </span>

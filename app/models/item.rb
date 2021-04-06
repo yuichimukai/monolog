@@ -1,8 +1,8 @@
 class Item < ApplicationRecord
 	belongs_to :category
 	has_many :tag_relationsips, dependent: :destroy
-	has_many :tags, through: :tag_relationsips
-	has_many :reviews
+	has_many :tags, through: :tag_relationsips, dependent: :destroy
+	has_many :reviews, dependent: :destroy
 
 	def save_tags(saveitem_tags)
 		saveitem_tags.each do |new_name|

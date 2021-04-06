@@ -14,7 +14,7 @@ class MicropostsController < ApplicationController
 		@micropost = current_user.microposts.build(micropost_params)
 		@micropost.image.attach(params[:micropost][:image])
 		if @micropost.save
-			flash[:success] = 'ツイートが作成されました'
+			flash[:success] = 'つぶやきが投稿されました'
 			redirect_to action: :index
 		else
 			@feed_items = current_user.feed.page(params[:page])

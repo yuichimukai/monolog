@@ -15,15 +15,17 @@
                 <span class="user"><%= link_to "@#{comment.user.username}", user_path(comment.user.id) %></span>
                 <div class="comment-entry">
                     <%= comment.text %>
-                    <% if comment.user == current_user %>
-                        <%= link_to micropost_comment_path(comment.micropost_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
-                            <i class="fas fa-trash" style="color: black;"></i>
-                        <% end %>
-                    <% end %>
                 </div>
-                <span class="comment-date">
-                      <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-                </span>
+                <div class="time-trash">
+                  <span class="comment-date">
+                        <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                  </span>
+                  <% if comment.user == current_user %>
+                      <%= link_to micropost_comment_path(comment.micropost_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                          <i class="fas fa-trash" style="color: black;"></i>
+                      <% end %>
+                  <% end %>
+                </div>
             </div>
         </div>
     </li>
@@ -45,16 +47,20 @@
               <div class="comment-text col-9">
                   <span class="user"><%= link_to "@#{comment.user.username}", user_path(comment.user.id) %></span>
                   <div class="comment-entry">
-                      <%= comment.text %>
+                    <%= comment.text %>
+                  </div>
+                  <div class="time-trash">
+                    <span class="comment-date pull-right">
+                          <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                    </span>
+                    <span>
                       <% if comment.user == current_user %>
                           <%= link_to micropost_comment_path(comment.micropost_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
                               <i class="fas fa-trash" style="color: black;"></i>
                           <% end %>
                       <% end %>
+                    </span>
                   </div>
-                  <span class="comment-date pull-right">
-                        <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-                  </span>
               </div>
           </div>
       </li>
