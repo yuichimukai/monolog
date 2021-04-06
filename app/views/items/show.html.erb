@@ -4,7 +4,7 @@
       <%= render @item, item: @item %>
     </div>
   </div>
-  <%= link_to "口コミを投稿する", root_path %>
+  <%= render 'reviews/new_review', review: @review, item: @item %>
 
   <div class="review-feed">
     <div class="review-content">

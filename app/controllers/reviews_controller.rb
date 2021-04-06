@@ -1,23 +1,55 @@
 class ReviewsController < ApplicationController
 	#before_action :authenticate_user!
-	def new
-		@review = Review.new
-	end
+	before_action :correct_user, only: %i[edit update]
+	before_action :set_post, %i[edit update destroy]
+
+	def new; end
 
 	def create
-		@review = Review.new(review_params)
-		@review.user_id = current_user.id
+		@item = Item.find(params[:review][:item_id])
+		@review = current_user.reviews.build(review_params)
 		if @review.save
-			redirect_to item_reviews_path(@review.item)
+			flash[:success] = '口コミを投稿しました'
+			redirect_to @item
 		else
-			@item = Item.find(params[:item_id])
+			flash.now[:danger] = '口コミの投稿に失敗しました'
 			render 'items/show'
 		end
 	end
 
+	def destroy
+		return unless @review.destroy
+
+		flash[:success] = '口コミを削除しました'
+		redirect_back(fallback_location: root_path)
+	end
+
+	def edit; end
+
+	def update
+		if @review.update(review_params)
+			flash[:success] = '口コミを更新しました'
+			redirect_to @review.product
+		else
+			flash.now[:danger] = '口コミの編集に失敗しました'
+			render :edit
+		end
+	end
+
+	def index; end
+
 	private
 
 	def review_params
-		params.require(:review).permit(:item_id, :rate, :title)
+		params.require(:review).permit(:title, :rate, :picture, :item_id)
+	end
+
+	def correct_user
+		@review = current_user.reviews.find_by(id: params[:id])
+		redirect_to reviews_path if @review.nil?
+	end
+
+	def set_review
+		@review = Review.find(params[:id])
 	end
 end
