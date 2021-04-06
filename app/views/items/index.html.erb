@@ -4,7 +4,12 @@
         <div class="col-12 col-lg-9">
           <div class="d-none d-md-block">
             <% @items.each do |item| %>
+              <div class="no-transition item_index_card mb-5">
                 <%= render 'item', item: item %>
+                <div class="item_card_show text-right">
+                  <%= link_to "詳細を見る", "/items/#{item.id}" %>
+                </div>
+              </div>
             <% end %>
           </div>
         </div>

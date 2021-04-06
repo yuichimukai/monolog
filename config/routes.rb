@@ -30,4 +30,5 @@ Rails
 		resources :chat_rooms, only: %i[create show]
 		resources :notifications, only: :index
 		resources :categories
+		resources :reviews
 	end
