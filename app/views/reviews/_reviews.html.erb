@@ -1,0 +1,24 @@
+<% if reviews.present? %>
+  <% reviews.each do |review| %>
+    <div class="row reviews">
+      <div class="col-md-2 reviews-user">
+        
+        <p class="reviews-title"><%= link_to review.user.username, review.user %></p>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class=" reviews-content">
+          <h4 class="mb-3">評価：<%= review.rate %>点 | <%= review.title %></h4>
+          <p><%= review.content %></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <%= link_to review.item do %>
+          <div class="reviews-item">
+            <img src="<%= review.item.item_image_url %>">
+            <p><%=  review.item.item_name %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -4,10 +4,9 @@
       <%= render @item, item: @item %>
     </div>
   </div>
+  <!--口コミ一覧-->
+  <%= render 'reviews/reviews', reviews: @reviews, user: @user %>
+  <!--口コミ投稿フォーム-->
   <%= render 'reviews/new_review', review: @review, item: @item %>
 
-  <div class="review-feed">
-    <div class="review-content">
-    </div>
-  </div>
 </div>
