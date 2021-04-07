@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-	before_action :authenticate_user!
+	before_action :authenticate_user!, only: %i[new edit create update destroy]
 	before_action :correct_user, only: %i[edit update]
 	before_action :set_review, only: %i[edit update destroy]
 
@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
 	def update
 		if @review.update(review_params)
 			flash[:success] = '口コミを更新しました'
-			redirect_to @review.product
+			redirect_to @review.item
 		else
 			flash.now[:danger] = '口コミの編集に失敗しました'
 			render :edit
@@ -41,7 +41,9 @@ class ReviewsController < ApplicationController
 	private
 
 	def review_params
-		params.require(:review).permit(:title, :content, :rate, :picture, :item_id)
+		params
+			.require(:review)
+			.permit(:title, :content, :rate, :picture, :item_id, :picture)
 	end
 
 	def correct_user

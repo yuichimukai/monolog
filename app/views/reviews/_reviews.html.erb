@@ -8,6 +8,10 @@
       <div class="col-md-6 mb-3">
         <div class=" reviews-content">
           <h4 class="mb-3">評価：<%= review.rate %>点 | <%= review.title %></h4>
+
+          <div id="star-rate-<%= review.id %>"></div>
+          <%= render 'reviews/read_rate', review: review %>
+
           <p><%= review.content %></p>
         </div>
       </div>
@@ -17,6 +21,12 @@
             <img src="<%= review.item.item_image_url %>">
             <p><%=  review.item.item_name %></p>
           </div>
+        <% end %>
+      </div>
+      <div class="col-md-12 edit-button text-right mt-3">
+        <% if current_user == review.user %>
+          <%= link_to '口コミを編集', edit_review_path(review), method: :get, class: 'btn btn-success' %>
+          <%= link_to '口コミを削除', review, method: :delete, class: 'btn btn-danger' %>
         <% end %>
       </div>
     </div>
