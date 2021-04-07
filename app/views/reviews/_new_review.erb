@@ -16,7 +16,8 @@
         <%= f.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
         <%= f.hidden_field :rate, id: :review_star %>
       </div>
-
+      
+      <%= render 'reviews/write_rate' %>
 
       <div class="form-group row">
         <%= f.label :content, '口コミ内容', class:'col-md-3 col-form-label'%>
