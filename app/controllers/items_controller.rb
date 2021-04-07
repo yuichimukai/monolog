@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+	before_action :set_item, only: %i[edit update show]
+
 	def search
 		@items = []
 
@@ -33,13 +35,20 @@ class ItemsController < ApplicationController
 	end
 
 	def show
-		@item = Item.find(params[:id])
 		@review = Review.new
+		@reviews =
+			Review.includes(:user, :item).where(item_id: @item.id).page(params[:page])
 	end
 
 	def index
 		@items = Item.all.page(params[:page])
 	end
+
+	def destroy; end
+
+	def edit; end
+
+	def update; end
 
 	private
 
@@ -61,5 +70,9 @@ class ItemsController < ApplicationController
 		params
 			.require(:item)
 			.permit(:item_image_url, :price, :item_url, :item_name, :category_id)
+	end
+
+	def set_item
+		@item = Item.find(params[:id])
 	end
 end

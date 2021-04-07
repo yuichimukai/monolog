@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <div class="rating-box">
     <p>口コミ</p>
-    <%= form_with model:review do |f|%>
+    <%= form_with model:review, local: true do |f|%>
 
       <%= f.hidden_field :item_id, value: item.id %>
 
