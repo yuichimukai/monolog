@@ -44,11 +44,23 @@ class ItemsController < ApplicationController
 		@items = Item.all.page(params[:page])
 	end
 
-	def destroy; end
+	def destroy
+		@item = Item.find_by(id: params[:item_id])
+		flash[:success] = '商品を削除しました' if @item.destroy
+		redirect_back(fallback_location: items_path)
+	end
 
 	def edit; end
 
-	def update; end
+	def update
+		if @item.update(item_params)
+			flash[:success] = 'アイテムを更新しました'
+			redirect_to @item
+		else
+			render :edit
+			flash.now[:danger] = 'アイテムの更新に失敗しました'
+		end
+	end
 
 	private
 
