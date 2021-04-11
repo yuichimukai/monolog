@@ -1,0 +1,12 @@
+<script>
+$('#star-rate-average-<%= item.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: "<%= item.reviews.average(:rate) %>",
+    //注目ポイント↑ 平均点を算出し、round関数で切り上げ
+  });
+</script>

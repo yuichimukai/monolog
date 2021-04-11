@@ -17,16 +17,18 @@
             <div class="star-rating_front" style="width: 87.0%">★★★★★</div>
             <div class="star-rating_back"></div>
           </div>
-          <div class="star-rating_score ml-1">
-            4.34
-          </div>
+          <div id= "star-rate-average-<%= item.id %>"></div>
+          <%= render 'items/star-rate-average', item: item%>
+
+          <span><%= item.reviews.average(:rate).to_f.round(1)%>点</span>
+
           <div class="star-rating_count">
-            (全5件)
+            (全<%= item.reviews.count %>件)
           </div>
         </div>
       </div>
       <div class="item_index_card_item_price">
-        <%= item.price %>
+        <%= item.price %>円
       </div>
       <div class="item_index_card_item_link">
         <%= link_to "リンク", item.item_url %>
