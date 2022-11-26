@@ -2,7 +2,7 @@
 
 ガジェット口コミサ-ビス
 
-※現在インスタンス停止中です
+※現在停止中
 
 ![image](https://user-images.githubusercontent.com/66901428/125556953-09e1094d-319c-4648-8cc4-ec473b3787e7.png)
 
